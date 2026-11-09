@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111512">
+<title>어머, 이게 뭐야? 누굴 위한 구멍인고 | 비주얼뉴스</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Maru+Buri:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+:root{--bg:#111512;--panel:#1b211d;--ink:#f2f0e8;--muted:#bac2ba;--line:#38413a;--green:#b3d1b3;--lime:#d6e0a1;--water:#7fc8e5;--red:#e65358;--sans:'Noto Sans KR',sans-serif;--serif:'Maru Buri',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.85}.page{width:min(1240px,calc(100% - 48px));margin:auto}.progress{position:fixed;z-index:30;top:0;left:0;height:3px;width:0;background:var(--lime)}
+.hero{min-height:82svh;display:flex;flex-direction:column;justify-content:center;padding:11vh 0;border-bottom:1px solid var(--line)}.eyebrow,.meta,.caption,.tag,.credit,.scrollcue{font-family:var(--sans)}.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--green);font-weight:700}.hero h1{font-size:clamp(48px,8vw,104px);line-height:1.18;letter-spacing:-.06em;margin:22px 0}.hero h1 span{color:var(--lime)}.hero p{max-width:760px;font-size:clamp(19px,2vw,24px);line-height:1.8;color:#d3d8d2;margin:0}.scrollcue{margin-top:54px;color:#b7c2b8;font-size:13px;letter-spacing:.04em;display:flex;gap:10px;align-items:center}.scrollcue i{display:inline-block;width:30px;height:1px;background:var(--green)}
+.opening{padding:10vh 0 12vh}.meta{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#bfc6bf;margin-bottom:12px}.photo{margin:0;overflow:hidden;background:#0a0d0b;border:1px solid #424a43}.photo img{display:block;width:100%;height:min(72vh,720px);object-fit:contain;background:#090b0a}.caption{font-size:12px;color:#aeb7ae;margin-top:10px}
+.story{border-top:1px solid var(--line);padding:10vh 0 12vh}.story-head{max-width:800px;margin:0 auto 42px}.story-head h2{font-size:clamp(33px,5vw,58px);line-height:1.45;letter-spacing:-.045em;margin:10px 0 16px}.story-head p,.copy p{font-size:18px;line-height:2;color:#d6dad4}.story-head p{margin:0}.copy{max-width:800px;margin:36px auto}.copy p{margin:0 0 20px}.copy blockquote{font-size:clamp(22px,3vw,32px);line-height:1.75;color:#f2efdf;border-left:3px solid var(--lime);padding:4px 0 4px 22px;margin:30px 0}.attribution{font:13px/1.7 var(--sans)!important;color:#aeb8ae!important;margin-top:-17px!important}
+.scene{position:relative;max-width:1080px;margin:54px auto 72px;background:#202722;border:1px solid #39433b;overflow:hidden;min-height:430px;isolation:isolate}.scene-visual{position:relative;height:clamp(280px,48vw,520px);overflow:hidden;background:#9ba398}.scene-title{position:absolute;z-index:5;left:clamp(18px,4vw,42px);top:clamp(16px,3vw,30px);font:700 12px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#f5f3e9;background:#111512d9;padding:9px 12px}.scene-copy{max-width:780px;padding:23px clamp(20px,4vw,42px) 30px}.scene-copy h3{font-size:clamp(22px,3.2vw,34px);line-height:1.5;margin:0 0 7px}.scene-copy p{font-size:17px;line-height:1.85;color:#d0d6cf;margin:0}.tag{font-size:11px;letter-spacing:.09em;color:var(--green);margin-bottom:5px}
+/* Permeable pavers: original geometry is drawn once and reused only as a visual system. */
+.pavers{position:absolute;inset:0;background-color:#a8ada4;background-image:linear-gradient(45deg,transparent 46%,#d5d8cf 47%,#d5d8cf 50%,transparent 51%),linear-gradient(-45deg,transparent 46%,#777e76 47%,#777e76 50%,transparent 51%);background-size:112px 112px;background-position:0 0,56px 56px}.pavers:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 108px,#dadbd3 108px 113px),repeating-linear-gradient(90deg,transparent 0 108px,#dadbd3 108px 113px);opacity:.72}.hole{position:absolute;width:clamp(42px,8vw,82px);aspect-ratio:1;transform:rotate(45deg);background:#111613;box-shadow:0 0 0 4px #d7d9d0;z-index:2}.rain-ground{position:absolute;inset:60% 0 0;background:linear-gradient(#353d38,#1b2b25 48%,#324638);z-index:1}.rain-ground:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 25%,#77836e55,transparent 54%)}.water-stream{position:absolute;z-index:4;width:7px;height:0;background:var(--water);border-radius:8px;top:49%;left:50%;animation:stream 2.4s ease-in-out infinite}.water-stream.s2{left:31%;animation-delay:.7s}.water-stream.s3{left:70%;animation-delay:1.3s}.drop{position:absolute;z-index:5;width:7px;height:18px;border-radius:80% 0 80% 80%;background:var(--water);transform:rotate(45deg);top:-24px;animation:fall 2s linear infinite}.drop.d1{left:20%;animation-delay:.1s}.drop.d2{left:35%;animation-delay:.8s}.drop.d3{left:52%;animation-delay:.35s}.drop.d4{left:78%;animation-delay:1.1s}.plant{position:absolute;z-index:4;bottom:17%;left:50%;width:130px;height:100px;transform:translateX(-50%)}.plant:before{content:"";position:absolute;bottom:0;left:60px;width:8px;height:90px;background:#9cbd77;border-radius:6px}.plant:after{content:"";position:absolute;left:24px;top:20px;width:60px;height:28px;border-radius:100% 0 100% 0;background:#a9ce82;transform:rotate(-25deg);box-shadow:35px 20px 0 -2px #789e64,-12px 42px 0 -4px #789e64}
+/* Separate, sourced icons move through separate vignettes. */
+.heel-stage{background:linear-gradient(180deg,#9aa197 0 73%,#313934 73%)}.heel-stage .pavers{inset:0 0 27%;}.shoe{display:block;position:absolute;z-index:5;width:clamp(150px,30vw,300px);height:auto;left:15%;top:4%;transform:rotate(-20deg);animation:heelstep 3.4s ease-in-out infinite;filter:drop-shadow(0 14px 12px #1119)}.icon-heel path{fill:var(--red)!important;stroke:#651c22;stroke-width:3;stroke-linejoin:round}.heel-target{position:absolute;z-index:3;left:52%;top:57%;width:clamp(48px,8vw,82px);aspect-ratio:1;transform:rotate(45deg);border:3px solid var(--red);box-shadow:0 0 0 999px #1112;animation:targetpulse 1.4s ease-in-out infinite}.heel-tip{position:absolute;z-index:6;left:59%;top:59%;height:72px;width:5px;background:var(--red);border-radius:4px;transform:rotate(-20deg);transform-origin:top;animation:tipdrop 3.4s ease-in-out infinite}.impact{position:absolute;z-index:7;left:63%;top:49%;font:700 12px var(--sans);color:#fff;background:var(--red);padding:5px 8px;opacity:0;animation:impact 3.4s ease-in-out infinite}
+.kid-stage{background:linear-gradient(#b6c1b4 0 72%,#344037 72%)}.kid-stage .pavers{inset:0 0 28%;background-size:100px 100px}.kid-shoes{display:block;position:absolute;z-index:5;width:clamp(130px,26vw,250px);left:10%;top:22%;filter:drop-shadow(0 10px 8px #1117);animation:kidwalk 4s ease-in-out infinite}.icon-kid path{fill:#f0cd78!important;stroke:#38433a;stroke-width:1.6;stroke-linejoin:round}.kid-hole{position:absolute;z-index:4;left:52%;top:48%;width:clamp(52px,9vw,92px);aspect-ratio:1;transform:rotate(45deg);background:#111613;box-shadow:0 0 0 4px #e1e1d7}.step-line{position:absolute;z-index:4;left:12%;right:13%;top:65%;height:3px;background:linear-gradient(90deg,#d6e0a1 0 39%,transparent 39% 64%,#d6e0a1 64%);opacity:.85}.path-label{position:absolute;z-index:6;right:7%;top:10%;font:700 12px var(--sans);color:#162019;background:#eef0d4;padding:8px 10px}
+.cane-stage{background:linear-gradient(180deg,#a5aaa2 0 74%,#333b35 74%)}.cane-stage .pavers{inset:0 0 26%;background-size:105px 105px}.cane{display:block;position:absolute;z-index:6;width:clamp(185px,34vw,340px);left:24%;top:-12%;transform:scaleX(-1) rotate(-12deg);transform-origin:82% 85%;filter:drop-shadow(0 10px 8px #1118);animation:canesweep 3.8s ease-in-out infinite}.cane-shadow{position:absolute;z-index:5;width:125px;height:18px;border-radius:50%;background:#10141099;left:50%;top:69%;transform:translateX(-50%);filter:blur(7px)}.cane-hole{position:absolute;z-index:4;left:52%;top:52%;width:clamp(50px,8vw,85px);aspect-ratio:1;transform:rotate(45deg);background:#111613;box-shadow:0 0 0 4px #e0e1d9}.tap-ring{position:absolute;z-index:7;left:51%;top:50%;width:clamp(55px,9vw,95px);aspect-ratio:1;border:3px solid var(--lime);border-radius:50%;transform:scale(.5);opacity:0;animation:tap 3.8s ease-out infinite}
+.clog-stage{background:linear-gradient(180deg,#a6aaa2 0 62%,#313932 62%)}.clog-stage .pavers{inset:0 0 38%;background-size:110px 110px}.clog-hole{position:absolute;z-index:4;left:45%;top:38%;width:clamp(80px,13vw,138px);height:clamp(50px,9vw,95px);background:#111613;transform:rotate(45deg);box-shadow:0 0 0 5px #d8d9d1;overflow:hidden}.debris{position:absolute;z-index:5;width:18px;height:10px;border-radius:2px;background:#927c5c;left:48%;top:18%;animation:clog 3s ease-in infinite}.debris:nth-of-type(2){left:55%;animation-delay:.6s}.debris:nth-of-type(3){left:41%;animation-delay:1.2s}.pool{position:absolute;z-index:6;left:31%;top:60%;width:43%;height:22%;border-radius:50%;background:#74b9d088;transform:scaleX(.1);filter:blur(2px);animation:pool 3s ease-out infinite}.tilt-block{position:absolute;z-index:7;left:68%;top:28%;width:22%;height:31%;background:linear-gradient(135deg,#c1c4ba,#888e84);border:4px solid #e1e1d8;transform:rotate(0deg);animation:tilt 2.2s ease-in-out infinite alternate}.tilt-block:before{content:"";position:absolute;inset:42% 0 auto;height:7px;background:#222a24}.ground-layer{position:absolute;z-index:2;left:0;right:0;bottom:0;height:38%;background:repeating-linear-gradient(0deg,#3a473d 0 25px,#465445 26px 29px)}
+.end{padding:12vh 0 13vh;text-align:center;border-top:1px solid var(--line)}.end h2{max-width:900px;margin:18px auto 0;font-size:clamp(36px,6vw,72px);line-height:1.45;letter-spacing:-.04em}.end h2 span{color:var(--lime)}.end p{max-width:720px;margin:22px auto 0;color:#cdd4cd;font-size:18px;line-height:1.9}.source{padding:26px 0 40px;border-top:1px solid var(--line);font:12px/1.9 var(--sans);color:#9da69e}.source a{color:var(--green)}
+@keyframes fall{0%{transform:translateY(0) rotate(45deg);opacity:0}15%{opacity:1}88%{opacity:1}100%{transform:translateY(360px) rotate(45deg);opacity:0}}@keyframes stream{0%,20%{height:0;opacity:0}35%{height:100px;opacity:1}75%{height:100px;opacity:.85}100%{height:0;opacity:0}}@keyframes heelstep{0%,12%{transform:translate(0,-15px) rotate(-20deg)}42%,56%{transform:translate(100px,128px) rotate(-9deg)}78%,100%{transform:translate(0,-15px) rotate(-20deg)}}@keyframes targetpulse{50%{box-shadow:0 0 0 8px #e6535833,0 0 0 999px #1112}}@keyframes tipdrop{0%,15%{transform:translateY(-20px) rotate(-20deg)}42%,55%{transform:translateY(53px) rotate(-20deg)}75%,100%{transform:translateY(-20px) rotate(-20deg)}}@keyframes impact{0%,39%,62%,100%{opacity:0;transform:scale(.7)}45%,56%{opacity:1;transform:scale(1)}}@keyframes kidwalk{0%,10%{transform:translateX(0) rotate(-8deg)}34%{transform:translateX(95px) translateY(-15px) rotate(5deg)}53%{transform:translateX(165px) translateY(12px) rotate(-13deg)}75%,100%{transform:translateX(0) rotate(-8deg)}}@keyframes canesweep{0%,10%{transform:scaleX(-1) rotate(-8deg)}42%,55%{transform:scaleX(-1) rotate(-25deg)}78%,100%{transform:scaleX(-1) rotate(-8deg)}}@keyframes tap{0%,43%{opacity:0;transform:scale(.35)}50%{opacity:1;transform:scale(1.25)}63%,100%{opacity:0;transform:scale(1.8)}}@keyframes clog{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:1}85%{transform:translateY(185px) rotate(240deg);opacity:1}100%{opacity:0}}@keyframes pool{0%,35%{transform:scaleX(.1);opacity:0}75%,100%{transform:scaleX(1);opacity:1}}@keyframes tilt{from{transform:rotate(-1deg) translateY(0)}to{transform:rotate(4deg) translateY(4px)}}
+@media(max-width:650px){.page{width:calc(100% - 36px)}.hero{min-height:72svh;padding:8vh 0}.hero h1{font-size:clamp(45px,13vw,68px)}.scrollcue{margin-top:34px}.opening{padding:7vh 0 8vh}.photo img{height:auto;min-height:230px;max-height:62vh}.story{padding:8vh 0}.story-head{margin-bottom:28px}.story-head p,.copy p{font-size:17px}.scene{min-height:0;margin:42px auto 52px}.scene-visual{height:340px}.scene-copy{padding:18px 18px 22px}.scene-copy p{font-size:16px}.shoe{left:6%;top:8%}.heel-stage .hole{left:60%}.heel-target{left:55%;top:58%}.heel-tip{left:63%;top:59%}.kid-shoes{left:3%;top:24%}.kid-hole{left:51%;top:48%}.path-label{right:4%;top:9%;font-size:10px}.cane{left:12%;top:-16%;width:230px}.cane-hole{left:51%;top:52%}.tap-ring{left:49%;top:50%}.clog-hole{left:43%;top:38%}.pool{top:62%;height:18%}.tilt-block{left:70%;top:28%;width:23%;height:30%}.end{padding:9vh 0}.end h2{font-size:38px}.end p{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shoe,.kid-shoes,.cane{animation-duration:6s}.drop,.water-stream,.debris,.pool,.tap-ring,.heel-tip{animation-duration:4.5s}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="hero page">
+  <div class="eyebrow">DELHI · SHALIMAR BAGH</div>
+  <h1>어머, 이게 뭐야?<br><span>누굴 위한 구멍인고</span></h1>
+  <p>빗물 배수를 위해 구멍을 낸 인도의 새 보행로가 안전성과 실용성 논란에 휩싸였습니다.</p>
+  <div class="scrollcue"><i></i> 구멍 아래와 보행로 위를 차례로 살펴보세요</div>
+</header>
+<main>
+  <section class="opening page" aria-label="현장 사진">
+    <div class="meta"><span>인도 델리 샬리마르 바그</span><span>현장 사진</span></div>
+    <figure class="photo"><img src="https://cphoto.asiae.co.kr/listimglink/9/2026110811113190920_1794103892.jpg" alt="마름모 모양 구멍이 반복된 델리 샬리마르 바그의 보행로" loading="eager" fetchpriority="high"></figure>
+    <figcaption class="caption">인도 델리 샬리마르 바그 지역의 보행로. 엑스(X·옛 트위터) 영상 캡처</figcaption>
+  </section>
+  <section class="story page" aria-label="배수 효과와 보행 안전 논란">
+    <header class="story-head">
+      <div class="eyebrow">배수 설계의 의도</div>
+      <h2>구멍으로 빗물을<br>땅속에 보내겠다는 구상입니다</h2>
+      <p>영상 속 남성은 보도블록의 구멍으로 빗물이 땅속에 스며들어 주변 식물에 수분을 공급할 수 있다고 설명했습니다. 물웅덩이를 줄이고 지하수를 채우는 데도 도움이 될 수 있다는 겁니다.</p>
+    </header>
+    <figure class="scene" data-scene>
+      <div class="scene-visual rain-scene">
+        <div class="scene-title">01 / 물은 어디로 가나</div>
+        <div class="pavers"></div><div class="rain-ground"></div>
+        <div class="hole" style="left:46%;top:48%"></div><div class="hole" style="left:19%;top:26%;width:clamp(34px,6vw,60px)"></div><div class="hole" style="left:75%;top:34%;width:clamp(34px,6vw,60px)"></div>
+        <i class="drop d1"></i><i class="drop d2"></i><i class="drop d3"></i><i class="drop d4"></i>
+        <i class="water-stream"></i><i class="water-stream s2"></i><i class="water-stream s3"></i><div class="plant" aria-hidden="true"></div>
+      </div>
+      <figcaption class="scene-copy"><div class="tag">기대 효과</div><h3>표면에 고이는 물을 줄이고, 땅으로 스며들게</h3><p>구멍이 열려 있고 배수층이 제 기능을 하면 빗물이 아래로 빠져나갈 수 있습니다. 식물에 수분을 공급하고 지하수 함양에 도움을 줄 수 있다는 설명입니다.</p></figcaption>
+    </figure>
+    <div class="copy">
+      <p>하지만 이를 본 사람들은 보도의 안전성과 실용성에 의문을 제기했습니다. 특히 보행 약자가 이 길을 안전하게 다닐 수 있느냐는 걱정이 이어졌습니다.</p>
+    </div>
+    <figure class="scene" data-scene>
+      <div class="scene-visual heel-stage"><div class="scene-title">02 / 구두 굽이 빠지면</div><div class="pavers"></div><div class="hole" style="left:53%;top:58%"></div><div class="heel-target"></div><svg class="shoe icon-heel" viewBox="0 0 512.314 512.314" role="img" aria-label="빨간 하이힐" focusable="false">
+<g transform="translate(-1 -1)">
+	<g>
+		<path d="M511.303,361.097c-4.126-18.938-22.27-32.7-49.775-43.111c-23.275-8.823-48.509-13.221-74.27-13.131
+			c-46.261,0.162-70.008-10.784-79.139-24.943c-8.191-12.7-159.163-217.839-181.99-245.424C103.141,6.711,84.381,0.019,71.144,9.21
+			c-1.523,1.058-2.709,2.17-3.597,3.221c-69.81,58.332-87.411,117.84-39.828,189.211c2.669,4.005,5.208,8.548,7.616,13.603
+			c13.004,27.298,22.224,69.532,27.909,122.563c5.683,53.015,7.212,108.577,6.457,155.217c-0.056,3.483-0.112,5.907-0.149,7.159
+			c-0.044,1.503,0.302,2.925,0.947,4.17c1.417,2.738,4.276,4.619,7.584,4.619h42.667c4.713,0,8.533-3.82,8.533-8.533V262.68
+			c8.161,2.196,16.573,7.414,24.86,15.151c27.069,25.277,52.791,77.44,63.98,138.994c2.777,15.274,7.969,28.552,15.257,39.949
+			c12.145,18.996,30.11,32.769,52.412,41.849c11.455,4.661,23.521,7.731,35.894,9.245c0.23,0.028,0.459,0.061,0.69,0.088
+			c0.523,0.061,1.047,0.113,1.571,0.169c0.448,0.048,0.896,0.101,1.345,0.144c17.531,1.708,35.613,0.311,53.396-4.124
+			l111.191-29.593c3.737-0.995,6.339-4.379,6.339-8.246v-39.581c2.263-2.623,4.865-6.212,7.428-10.748
+			C512.35,400.576,515.883,382.082,511.303,361.097z M35.828,182.353c4.448,0.47,9.126,1.019,14.027,1.66
+			c21.292,2.783,42.437,6.702,62.122,11.966c14.661,3.921,27.936,8.451,39.491,13.615c44.111,20.172,86.782,78.629,100.856,156.056
+			c7.405,40.73,31.98,67.265,67.668,81.795c28.722,11.696,61.284,13.415,92.897,5.521l66.259-17.632v24.409l-104.657,27.855
+			c-28.19,7.018-57.021,5.49-82.256-4.785c-19.712-8.026-35.188-20.027-45.394-36.765c-5.648-9.264-9.689-19.973-11.925-32.273
+			c-11.704-64.394-38.447-119.818-69.414-148.486c-14.369-13.304-29.646-20.853-44.754-20.853c-4.713,0-8.533,3.82-8.533,8.533
+			v238.933H86.789c0.712-46.987-0.861-102.607-6.574-155.91c-6.138-57.265-16.259-102.531-31.464-132.111
+			c-2.173-4.227-4.449-8.134-6.833-11.71c-0.208-0.312-0.408-0.623-0.613-0.935c-0.341-0.518-0.682-1.035-1.016-1.551
+			C38.722,187.248,37.237,184.806,35.828,182.353z M488.787,407.58c-1.614,2.855-3.333,5.327-5.03,7.393
+			c-0.766,0.932-1.345,1.569-1.693,1.925l-73.436,19.543c-28.071,7.008-56.937,5.484-82.199-4.802
+			c-30.618-12.466-51.034-34.51-57.312-69.041c-15.04-82.74-61.178-145.947-110.618-168.555
+			c-12.519-5.595-26.631-10.41-42.112-14.55c-20.486-5.479-42.341-9.53-64.32-12.402c-7.693-1.005-18.769-2.153-25.373-2.783
+			C5.41,113.563,24.543,70.371,79.169,24.962c0.634-0.527,1.188-1.143,1.646-1.829c1.263-0.737,3.06-0.988,6.466,0.227
+			c6.526,2.328,15.144,9.254,25.7,22.01c22.406,27.075,172.978,231.672,180.796,243.793c12.537,19.441,41.824,32.941,93.541,32.759
+			c23.712-0.083,46.875,3.953,68.164,12.024c22.564,8.54,36.622,19.204,39.146,30.787
+			C498.259,381.369,495.531,395.648,488.787,407.58z"/>
+	</g>
+</g>
+</svg><i class="heel-tip"></i><b class="impact">덜컥</b></div>
+      <figcaption class="scene-copy"><div class="tag">하이힐 보행자 우려</div><h3>굽 끝이 틈에 닿고, 발이 순간 멈춥니다</h3><p>한 이용자는 하이힐이 블록 틈에 낀 모습을 AI 이미지로 만들어 공유했습니다. 여기서는 구멍과 굽의 크기 관계를 보여주기 위해 신발 아이콘을 별도 장면으로 움직였습니다.</p></figcaption>
+    </figure>
+    <figure class="scene" data-scene>
+      <div class="scene-visual kid-stage"><div class="scene-title">03 / 작은 발걸음</div><div class="pavers"></div><div class="kid-hole"></div><svg class="kid-shoes icon-kid" viewBox="0 0 220.071 220.071" role="img" aria-label="아이 신발" focusable="false">
+<path d="M62.251,208.857c-6.899,0-13.713-1.787-19.873-5.291c-9.362-5.325-16.089-13.978-18.944-24.363l-7.251-26.381l-2.861,0.786
+	c0,0.001,0,0.001,0,0.001c-3.812,1.047-7.762-1.203-8.81-5.013L4.3,147.825c-1.047-3.81,1.2-7.762,5.011-8.81l2.788-0.767
+	c-0.843-2.322-2.07-4.609-3.664-6.822c-3.118-4.33-5.419-9.147-6.84-14.317c-3.282-11.939-1.449-24.845,5.029-35.404
+	c6.569-10.707,16.994-17.999,29.356-20.531c21.958-4.497,44.045,8.094,51.373,29.293c2.105,6.091,2.881,12.4,2.305,18.753
+	c-0.239,2.637-0.123,5.19,0.346,7.617l0.681-0.187c1.331-0.37,2.707,0.416,3.073,1.747l2.686,9.771
+	c0.176,0.64,0.09,1.322-0.238,1.899c-0.328,0.576-0.871,0.999-1.51,1.174l-0.753,0.207l7.251,26.383
+	c5.892,21.438-6.756,43.674-28.195,49.565C69.448,208.373,65.838,208.857,62.251,208.857z M21.004,151.497l7.251,26.382
+	c2.5,9.097,8.394,16.677,16.595,21.342c8.201,4.664,17.728,5.854,26.825,3.356c18.78-5.162,29.86-24.641,24.699-43.421
+	l-7.251-26.381l-7.262,1.996c2.207,5.539,5.142,15.125,5.967,18.127c2.993,10.888,2.619,20.115-1.11,27.427
+	c-3.383,6.632-9.415,11.304-17.444,13.511c-8.029,2.206-15.602,1.274-21.899-2.698c-6.942-4.378-11.979-12.118-14.972-23.007
+	c-0.825-3.001-3.201-12.741-4.136-18.63L21.004,151.497z M33.118,148.167c0.748,5.047,3.055,14.814,4.106,18.639
+	c2.651,9.647,6.964,16.411,12.818,20.103c5.076,3.202,11.268,3.93,17.907,2.105c6.638-1.824,11.588-5.614,14.315-10.961
+	c3.145-6.165,3.395-14.183,0.743-23.831c-1.05-3.823-4.059-13.397-5.996-18.118L33.118,148.167z M19.392,141.429l-8.756,2.406
+	c-1.152,0.317-1.832,1.512-1.515,2.663l0.212,0.772c0.317,1.152,1.512,1.829,2.663,1.517l5.244-1.441
+	c0.009-0.003,0.019-0.006,0.028-0.008l3.367-0.926L19.392,141.429z M24.214,140.104l1.244,4.983l65.503-18.004l-1.361-4.95
+	l-16.304,4.48c-0.012,0.004-0.025,0.008-0.038,0.011l-41.76,11.478c-0.013,0.004-0.025,0.008-0.038,0.011L24.214,140.104z
+	 M44.93,65.264c-2.629,0-5.288,0.263-7.945,0.808c-10.992,2.252-20.26,8.732-26.098,18.247c-5.842,9.523-7.43,20.698-4.47,31.466
+	c1.263,4.594,3.307,8.874,6.076,12.72c1.948,2.706,3.437,5.528,4.44,8.415l11.699-3.215c2.236-12.167,8.784-20.807,17.722-23.264
+	c8.939-2.45,18.982,1.624,27.121,10.938l11.697-3.215c-0.62-3.002-0.786-6.154-0.492-9.396c0.511-5.644-0.179-11.251-2.051-16.669
+	C77.004,75.83,61.596,65.264,44.93,65.264z M51.593,114.741c-1.333,0-2.642,0.172-3.915,0.521c-6.472,1.779-11.405,8-13.615,16.949
+	l33.979-9.339C62.843,117.602,57.032,114.741,51.593,114.741z M154.236,171.47c-3.619,0-7.261-0.457-10.858-1.382
+	c-23.132-5.945-37.115-29.602-31.169-52.734l7.399-28.787l-1.007-0.259c-1.337-0.344-2.143-1.706-1.799-3.043l2.722-10.593
+	c0.165-0.643,0.579-1.192,1.149-1.53c0.57-0.338,1.253-0.434,1.895-0.269l0.945,0.242c0.498-2.707,0.591-5.555,0.275-8.49
+	c-0.732-6.818-0.011-13.612,2.143-20.194c7.495-22.91,31.004-36.832,54.681-32.396c13.33,2.5,24.664,10.149,31.913,21.538
+	c7.15,11.231,9.351,25.065,6.038,37.954c-1.435,5.583-3.821,10.8-7.094,15.508c-1.735,2.496-3.05,5.071-3.924,7.68l3.586,0.922
+	c1.854,0.477,3.411,1.646,4.385,3.294c0.974,1.647,1.248,3.576,0.771,5.43l-0.399,1.553l0,0c-0.477,1.854-1.646,3.412-3.294,4.386
+	c-1.647,0.976-3.576,1.249-5.431,0.771l-3.651-0.938l-7.399,28.786c-2.88,11.206-9.952,20.62-19.913,26.507
+	C169.438,169.423,161.891,171.47,154.236,171.47z M124.451,89.812l-7.399,28.786c-5.259,20.463,7.109,41.389,27.571,46.648
+	c9.912,2.548,20.223,1.083,29.034-4.125c8.811-5.207,15.066-13.534,17.614-23.446l7.399-28.787l-8.28-2.128
+	c-0.839,6.054-3.112,16.328-4.152,20.374c-3.021,11.753-8.289,20.156-15.658,24.977c-6.675,4.367-14.773,5.503-23.423,3.277
+	c-8.647-2.222-15.197-7.12-18.939-14.165c-4.131-7.776-4.694-17.679-1.674-29.432c1.041-4.048,4.004-14.145,6.187-19.852
+	L124.451,89.812z M137.603,93.193c-2.008,5.082-5.139,15.65-6.217,19.843c-2.7,10.507-2.281,19.201,1.247,25.842
+	c3.065,5.771,8.518,9.806,15.768,11.669c7.25,1.864,13.973,0.958,19.441-2.619c6.292-4.117,10.852-11.531,13.553-22.037
+	c1.078-4.192,3.43-14.961,4.122-20.383L137.603,93.193z M198.013,103.557l10.396,2.672c1.156,0.295,2.34-0.403,2.637-1.56
+	l0.399-1.553c0.144-0.561,0.062-1.144-0.233-1.642s-0.766-0.852-1.326-0.996L199.463,97.8L198.013,103.557z M170.256,96.422
+	l22.914,5.89l1.451-5.756l-70.876-18.218l-1.478,5.75l0.972,0.25c0.012,0.002,0.023,0.005,0.036,0.009L170.256,96.422z
+	 M189.71,90.13l12.981,3.337c1.023-3.176,2.59-6.292,4.671-9.285c2.932-4.218,5.07-8.894,6.356-13.898
+	c3.014-11.725,1.091-23.809-5.413-34.025c-6.499-10.209-16.662-17.065-28.617-19.309c-21.221-3.979-42.289,8.502-49.007,29.036
+	c-1.932,5.904-2.579,11.996-1.923,18.105c0.38,3.54,0.248,6.987-0.395,10.271l12.979,3.336
+	c8.579-10.203,19.307-14.803,28.947-12.319C179.934,67.858,187.116,77.055,189.71,90.13z M146.786,79.097l37.482,9.635
+	c-2.527-9.862-8.057-16.669-15.222-18.511C161.882,68.38,153.757,71.676,146.786,79.097z"/>
+</svg><div class="step-line"></div><div class="path-label">발을 디딜 틈은 충분할까?</div></div>
+      <figcaption class="scene-copy"><div class="tag">어린이 보행 우려</div><h3>발이 작고 보폭이 짧으면 틈이 더 크게 느껴집니다</h3><p>아이도 이 길로 안전하게 다닐 수 있느냐는 걱정입니다. 발걸음이 구멍을 피해 이동하는 모습을 보여줍니다. 실제 사고 장면을 재현한 것은 아닙니다.</p></figcaption>
+    </figure>
+    <figure class="scene" data-scene>
+      <div class="scene-visual cane-stage"><div class="scene-title">04 / 지팡이 끝이 닿는 곳</div><div class="pavers"></div><div class="cane-hole"></div><svg class="cane icon-cane" viewBox="0 0 128 128" role="img" aria-label="흰 지팡이" focusable="false"><path fill="#e0e0e0" d="M116.807 4.103l7.092 7.092L22.558 112.537l-7.093-7.093z"></path><path d="M97.72 37.37s-.13-2.82-2.2-4.89c-2.07-2.07-4.89-2.2-4.89-2.2L116.81 4.1s1.89-.8 4.89 2.2c3.01 3.01 2.2 4.89 2.2 4.89L97.72 37.37z" fill="#646464"></path><path d="M22.56 112.54l-7.09-7.09L43.12 77.8s2.79-.52 5.21 1.89c2.41 2.41 1.89 5.21 1.89 5.21l-27.66 27.64z" fill="#f44336"></path><path d="M121.7 6.3c-3.01-3.01-4.89-2.2-4.89-2.2s3.38.56 4.26 2.82c.88 2.27-.55 4.31-.55 4.31l-90.06 90.06s-3.34 3.3-7.04 2.29c-3.31-.9-3.66-2.43-3.66-2.43l-2.9 2.9l1.36 5.74l4.33 2.73l99.05-99.05l.01.03l2.31-2.31c-.02 0 .79-1.88-2.22-4.89z" opacity=".33" fill="#2686c6"></path><path d="M121.06 6.92c.88 2.27-.55 4.31-.55 4.31L97.02 34.72s.61.8.69 2.62l23.87-23.87l.01.03l2.31-2.31s.8-1.89-2.2-4.89s-4.89-2.2-4.89-2.2s3.38.55 4.25 2.82z" fill="#444"></path><circle cx="14.15" cy="113.85" r="10.15" fill="#e0e0e0"></circle><path d="M23.65 110.28c.21 2.7-.72 5.48-2.79 7.55c-3.76 3.76-9.86 3.76-13.62 0c-1.9-1.9-2.84-4.4-2.82-6.9c-1.03 3.46-.19 7.36 2.55 10.1a10.146 10.146 0 0 0 14.36 0c2.91-2.91 3.68-7.14 2.32-10.75z" opacity=".33" fill="#2686c6"></path><path d="M118.92 44.61c3.99-6.72 4.76-22.58-.46-35.47a1.756 1.756 0 0 0-2.29-.97c-.9.36-1.33 1.39-.97 2.29c5.2 12.84 3.71 27.27.69 32.35c-.84 1.41-1.47 1.59-1.64 1.61c-.47.05-.79-.05-1.11-.42c-2.24-2.45-2.08-11.72-.74-21.31l-4.02 4.02c-.15 1.48-.28 3.01-.36 4.55c-.43 7.84.4 12.78 2.53 15.11c.06.06.11.12.17.18c1.06 1.06 2.42 1.53 3.93 1.36c1.13-.12 2.78-.8 4.27-3.3z" fill="#90a4ae"></path></svg><i class="cane-shadow"></i><i class="tap-ring"></i></div>
+      <figcaption class="scene-copy"><div class="tag">시각장애인·보행 보조기 우려</div><h3>지팡이 끝과 작은 바퀴가 틈에 걸릴 수도</h3><p>카트를 끄는 사람, 목발을 짚은 사람, 시각장애인도 다니기 어렵다는 걱정이 나왔습니다. 지팡이가 바닥을 살피다 구멍에 닿는 순간을 별도 장면으로 표현했습니다.</p></figcaption>
+    </figure>
+    <div class="copy">
+      <p>이 보도를 직접 걸어본 이용자는 다섯 번쯤 발이 걸려 넘어진 뒤 결국 차도로 걸어갔다고 전했습니다.</p>
+      <blockquote>“이 구멍들, 비가 오면 정말 물을 빼낼 수 있을까요?”</blockquote>
+      <p class="attribution">배수 효과는 구멍이 막히지 않고, 아래 배수층이 유지되는지를 함께 봐야 합니다.</p>
+    </div>
+    <figure class="scene" data-scene>
+      <div class="scene-visual clog-stage"><div class="scene-title">05 / 관리가 멈추면</div><div class="pavers"></div><div class="ground-layer"></div><div class="clog-hole"></div><i class="debris"></i><i class="debris"></i><i class="debris"></i><div class="pool"></div><div class="tilt-block"></div></div>
+      <figcaption class="scene-copy"><div class="tag">막힘·침하·유지 관리</div><h3>구멍은 막히고, 물은 고이고, 블록은 흔들릴 수 있습니다</h3><p>쓰레기와 퇴적물이 구멍을 막으면 배수가 원활하지 않을 수 있다는 지적이 나왔습니다. 기초가 약하면 블록이 움직이거나 고르지 않게 가라앉을 수 있고, 잔디를 유지하려면 계속 물을 주고 관리해야 한다는 의견도 나왔습니다.</p></figcaption>
+    </figure>
+    <div class="copy"><p class="closing-line">빗물을 땅으로 보내는 설계가 제 역할을 하려면, 그 위를 걷는 사람도 안전해야 합니다.</p></div>
+  </section>
+  <section class="end page"><div class="eyebrow">A WALKWAY FOR EVERYONE?</div><h2>하나만 알고 둘은 몰랐던<br><span>인도의 최악의 보행도로</span></h2><p>빗물 잡으려다 사람 잡겠네요.</p></section>
+</main>
+<footer class="source page">
+  원문: <a href="https://www.asiae.co.kr/article/world-topic/2026110811144323673" target="_blank" rel="noopener">아시아경제 「'최악의 보행로'에 쏟아진 불만」</a><br>
+  아이콘: SVG Repo — <a href="https://www.svgrepo.com/svg/277800/high-heels-shoe" target="_blank" rel="noopener">하이힐</a> · <a href="https://www.svgrepo.com/svg/150395/baby-shoes" target="_blank" rel="noopener">아기 신발</a> · <a href="https://www.svgrepo.com/svg/398603/white-cane" target="_blank" rel="noopener">흰 지팡이</a> (각 자산 CC0 표기). 장면 애니메이션은 기사 속 우려를 설명하기 위한 연출입니다.
+</footer>
+<script>
+const progress=document.querySelector('.progress');function update(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%'}addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+
+</script>
+</body>
+</html>
